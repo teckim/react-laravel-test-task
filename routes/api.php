@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\UniversityController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,5 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('/me', [AuthController::class, 'me']);
     });
 });
+
+Route::get('/universities', [UniversityController::class, 'index']);
