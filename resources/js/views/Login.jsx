@@ -74,7 +74,7 @@ function LoginForm({ errors, onLogin }) {
         control={
           <Checkbox
             checked={remember}
-            onChange={(e) => setRemember(e.target.value)}
+            onChange={(e) => setRemember(e.target.checked)}
           />
         }
         label="Remember me"
