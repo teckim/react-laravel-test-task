@@ -1,9 +1,9 @@
-import axios from '../plugins/axios'
+import { axiosCachable } from '../plugins/axios'
 
 const UniversityService = {
   search(query) {
     return new Promise((resolve, reject) => {
-      axios
+      axiosCachable
         .get('/api/universities', {
           params: {
             query,
