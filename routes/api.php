@@ -23,4 +23,5 @@ Route::group(['prefix' => 'auth'], function () {
     });
 });
 
-Route::get('/universities', [UniversityController::class, 'index']);
+Route::get('/universities', [UniversityController::class, 'index'])
+    ->middleware('cache.headers:public');
