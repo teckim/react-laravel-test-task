@@ -86,16 +86,4 @@ function LoginForm({ errors, onLogin }) {
   )
 }
 
-// LoginForm.propTypes = {
-//   errors: {
-//     email: PropTypes.string,
-//     password: PropTypes.string,
-//     remember: PropTypes.bool,
-//   },
-// }
-
-// LoginForm.defaultProps = {
-//   errors: {},
-// }
-
 export default LoginView
