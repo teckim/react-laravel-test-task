@@ -1,4 +1,11 @@
-import { AppBar, Toolbar, Button, Container, Typography } from '@mui/material'
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  Container,
+  Typography,
+  Stack,
+} from '@mui/material'
 import useAuth from '../hooks/useAuth'
 
 function NavBar() {
@@ -6,22 +13,40 @@ function NavBar() {
 
   return (
     isLoggedIn && (
-      <AppBar color="transparent" position="static">
+      <AppBar color="transparent" position="static" sx={{ mb: 8 }}>
         <Container maxWidth="xl">
           <Toolbar>
-            <Button color="warning" onClick={logout}>
+            <Typography
+              fontSize={12}
+              fontWeight={500}
+              textTransform="uppercase"
+              color="primary"
+              sx={{
+                mr: 'auto',
+              }}
+            >
+              Unis
+            </Typography>
+            {isLoggedIn && (
+              <Stack>
+                <Typography color="grey" variant="caption" noWrap>
+                  Logged in as
+                </Typography>
+                <Typography variant="body2" noWrap>
+                  {user.email}
+                </Typography>
+              </Stack>
+            )}
+            <Button
+              sx={{
+                ml: 2,
+              }}
+              color="warning"
+              size="small"
+              onClick={logout}
+            >
               logout
             </Button>
-            {isLoggedIn && (
-              <Typography
-                noWrap
-                sx={{
-                  ml: 'auto',
-                }}
-              >
-                Logged in as: {user.email}
-              </Typography>
-            )}
           </Toolbar>
         </Container>
       </AppBar>
