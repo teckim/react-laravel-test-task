@@ -12,7 +12,7 @@ return [
     | location for this type of information, allowing packages to have
     | a conventional file to locate the various service credentials.
     |
-    */
+     */
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
@@ -31,4 +31,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'hipolabs' => [
+        'base_url' => env('HIPOLABS_API_BASE_URL'),
+        'cache_ttl' => 1000 * 60 * 5,
+    ],
 ];
